@@ -2,29 +2,23 @@ package com.test.ashish.readsms;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.ListActivity;
-import android.content.BroadcastReceiver;
+
 import android.content.Intent;
-import android.content.IntentFilter;
+
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.graphics.Color;
-import android.graphics.Typeface;
+
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
+import android.widget.TextView;
+
 import java.util.Date;
-import java.util.List;
 
 public class MainActivity extends Activity {
 
@@ -117,7 +111,6 @@ public class MainActivity extends Activity {
         Cursor c =null;
         try {
             c = getContentResolver().query(uri, null, null, null, null);
-//            startManagingCursor(c);
             Date date = new Date();
             long timeNow = date.getTime();
 
