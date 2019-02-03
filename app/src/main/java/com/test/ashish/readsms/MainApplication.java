@@ -11,7 +11,6 @@ public class MainApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.d("MainApplication","MainApplication");
         IntentFilter intentFilter = new IntentFilter("android.provider.Telephony.SMS_RECEIVED");
         registerReceiver(new SmsBroadCastReceiver(),intentFilter);
     }

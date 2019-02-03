@@ -35,11 +35,13 @@ public class SmsBroadCastReceiver extends BroadcastReceiver {
 
     public void createNotification(Context context, String title, String message) {
 
-        Intent i = new Intent(context, MainActivity.class);
+        Intent i = new Intent(context, MessageDetail.class);
+        i.putExtra("sender",title);
+        i.putExtra("message", message);
         int notificationId = 23232313;
 
         TaskStackBuilder taskStackBuilder = TaskStackBuilder.create(context);
-        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         taskStackBuilder.addNextIntentWithParentStack(i);
 
         PendingIntent pendingIntent = taskStackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
