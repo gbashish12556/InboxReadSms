@@ -36,13 +36,22 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         smsListLinearLayout = findViewById(R.id.sms_list_linear_layout);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         if(checkPermission()) {
             pupulateUi();
         }
-
     }
+
     public void pupulateUi(){
 
+        if(smsListLinearLayout.getChildCount()>0){
+            smsListLinearLayout.removeAllViews();
+        }
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
         LinearLayout category0LineaerLayout = new LinearLayout(this);
